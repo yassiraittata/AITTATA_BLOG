@@ -52,4 +52,9 @@
   padding: 1rem 2rem;
   color: #fff;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #ac1afa;
 }

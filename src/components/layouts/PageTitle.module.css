@@ -13,6 +13,7 @@
 }
 
 .second_title {
-  color: rgba(0, 0, 0, 0.8);
+  /* color: rgba(0, 0, 0, 0.8); */
+  color: #750bb0;
   font-size: 1.7rem;
 }

@@ -30,7 +30,7 @@
   border-radius: 100px;
   font: inherit;
   font-size: inherit;
-  background-color: #ddd;
+  /* background-color: #ddd; */
   transition: all 0.3s;
 }
 

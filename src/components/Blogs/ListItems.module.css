@@ -3,12 +3,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 3rem;
   grid-row-gap: 5rem;
+  padding-bottom: 5rem;
 }
 
 .categories {
   list-style: none;
   display: flex;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid #bbb;
 }
 
@@ -19,11 +21,16 @@
 .categories li .link {
   text-decoration: none;
   font-size: 1.6rem;
-  color: #bbb;
+  padding: 0 1.5rem;
+  background-color: #bbb;
+  border-radius: 100px;
+  color: #fff;
   font-weight: 500;
+  border: 1px solid #bbb;
 }
 
 .active {
   color: #750bb0 !important;
-  /* border: 1px solid #750bb0; */
+  border-color: #750bb0 !important;
+  background-color: #dbb2f1 !important;
 }

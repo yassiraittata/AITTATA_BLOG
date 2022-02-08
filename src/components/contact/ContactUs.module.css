@@ -1,0 +1,62 @@
+.container {
+  /* padding: 0 5rem 8rem; */
+  /* margin-bottom: 8rem; */
+  /* background-color: red; */
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headline {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 2.5rem;
+  /* margin: auto; */
+}
+
+.form {
+  /* background-color: red; */
+  width: 50%;
+}
+
+.control {
+  margin-bottom: 2rem;
+
+  /* background-color: blue; */
+}
+
+.control label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.control input,
+.control textarea {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  font: inherit;
+  font-size: 1.5rem;
+  border: 1px solid #aaa;
+  border-radius: 0.8rem;
+  outline: none;
+  background: transparent;
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  background-color: #750bb0;
+  border: 1px solid #750bb0;
+  color: #eee;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: #750bb0;
+}

@@ -8,7 +8,7 @@ const MainHeader = () => {
     <>
       <div className={classes.header_container}>
         <header className={classes.header}>
-          <h1 className={classes.logo}>Blog</h1>
+          <h1 className={classes.logo}>AITTATABlog</h1>
           <form className={classes.search}>
             <input type="text" placeholder="Search" />
           </form>
