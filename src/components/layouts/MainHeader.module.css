@@ -1,13 +1,17 @@
 .header_container {
-  background-color: #cfe2f5;
+  /* background-color: #cfe2f5; */
   padding: 3rem 2rem 5rem 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 7rem;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header > a {
+  text-decoration: none;
 }
 
 .logo {
@@ -54,5 +58,9 @@
 }
 
 .nav li a:hover {
+  border-bottom: 2px solid #750bb0;
+}
+
+.active {
   border-bottom: 2px solid #750bb0;
 }

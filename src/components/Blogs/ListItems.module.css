@@ -10,12 +10,16 @@
   list-style: none;
   display: flex;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0.2rem;
   border-bottom: 2px solid #bbb;
+  overflow: hidden;
+  /* background-color: red; */
 }
+
 
 .categories li {
   margin-right: 2rem;
+  /* transform: translateX(-100%); */
 }
 
 .categories li .link {

@@ -32,6 +32,11 @@ const ListItems = () => {
             Other
           </a>
         </li>
+        <li>
+          <a className={classes.link} href="#">
+            Other
+          </a>
+        </li>
       </ul>
       <div className={classes.list_items}>
         <BlogItem />

@@ -16,13 +16,13 @@
 }
 
 .button {
-  padding: 1rem 1.5rem;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
   background-color: #750bb0;
   border: 1px solid #750bb0;
   color: #eee;
   border-radius: 0.8rem;
   font-size: 1.5rem;
-  cursor: pointer;
   transition: all 0.3s;
 }
 

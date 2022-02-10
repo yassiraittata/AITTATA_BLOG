@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
 
 import classes from "./MainHeader.module.css";
 import PageTitle from "./PageTitle";
@@ -8,20 +9,35 @@ const MainHeader = () => {
     <>
       <div className={classes.header_container}>
         <header className={classes.header}>
-          <h1 className={classes.logo}>AITTATABlog</h1>
+          <Link to="/">
+            <h1 className={classes.logo}>AITTATA Blog</h1>
+          </Link>
           <form className={classes.search}>
             <input type="text" placeholder="Search" />
           </form>
           <nav className={classes.nav}>
             <li>
-              <a href="#">About us</a>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? classes.active : "")}
+              >
+                About us
+              </NavLink>
             </li>
             <li>
-              <a href="#">Contact us</a>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? classes.active : "")}
+              >
+                Contact us
+              </NavLink>
             </li>
           </nav>
         </header>
-        <PageTitle />
+
+        <Routes>
+          <Route path="/blogs" element={<PageTitle />} />
+        </Routes>
       </div>
     </>
   );

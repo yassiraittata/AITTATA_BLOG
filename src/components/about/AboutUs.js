@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 
 import classes from "./AboutUs.module.css";
 
 const AboutUs = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className={classes.about}>
       <h1>Who are we ?</h1>
@@ -31,7 +35,9 @@ const AboutUs = () => {
         Proin feugiat, augue non elementum posuere, metus purus iaculis lectus,
         et tristique ligula justo vitae magna.
       </p>
-      <button className={classes.button}>Say HELLO!</button>
+      <Link to="/contact" className={classes.button}>
+        Say HELLO!
+      </Link>
     </div>
   );
 };

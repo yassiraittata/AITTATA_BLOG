@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import classes from "./ContactUs.module.css";
 
 const ContactUs = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className={classes.container}>
       <h1 className={classes.headline}>Say HELLO!</h1>
@@ -12,7 +16,7 @@ const ContactUs = () => {
         </div>
         <div className={classes.control}>
           <label>Email</label>
-          <input type="text" />
+          <input type="email" />
         </div>
         <div className={classes.control}>
           <label>Message</label>

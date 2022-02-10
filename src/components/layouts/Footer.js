@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import classes from "./Footer.module.css";
 
@@ -8,7 +9,9 @@ const Footer = () => {
       <h1 className={classes.headline}>Blog Post</h1>
       <div className={classes.footer__description}>
         <div className={classes.copyright}>
-          <h2 className={classes.copyright__tag}>&copy; YASSIR AITTATA</h2>
+          <h2 className={classes.copyright__tag}>
+            &copy; 2022, YASSIR AITTATA
+          </h2>
           <p className={classes.copyright__text}>
             Le lorem ipsum est, en imprimerie, une suite de mots sans
             signification utilisée à titre provisoire pour calibrer une mise en
@@ -19,10 +22,10 @@ const Footer = () => {
         </div>
         <nav className={classes.links}>
           <li className={classes.link__item}>
-            <a href="#">Contact us</a>
+            <Link to="/about">About us</Link>
           </li>
           <li className={classes.link__item}>
-            <a href="#">About us</a>
+            <Link to="/contact">Contact us</Link>
           </li>
         </nav>
       </div>
