@@ -8,6 +8,14 @@ const Footer = () => {
     <div className={classes.footer}>
       <h1 className={classes.headline}>Blog Post</h1>
       <div className={classes.footer__description}>
+        <nav className={classes.links}>
+          <li className={classes.link__item}>
+            <Link to="/about">About us</Link>
+          </li>
+          <li className={classes.link__item}>
+            <Link to="/contact">Contact us</Link>
+          </li>
+        </nav>
         <div className={classes.copyright}>
           <h2 className={classes.copyright__tag}>
             &copy; 2022, YASSIR AITTATA
@@ -20,14 +28,6 @@ const Footer = () => {
             utilise un texte en faux latin, le Lorem ipsum ou Lipsum.
           </p>
         </div>
-        <nav className={classes.links}>
-          <li className={classes.link__item}>
-            <Link to="/about">About us</Link>
-          </li>
-          <li className={classes.link__item}>
-            <Link to="/contact">Contact us</Link>
-          </li>
-        </nav>
       </div>
     </div>
   );

@@ -56,3 +56,18 @@
 .link__item:hover a {
   color: #750bb0;
 }
+
+@media (max-width: 600px) {
+  .footer__description {
+    flex-direction: column;
+  }
+
+  .links {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+
+  .link__item {
+    margin-bottom: 20px;
+  }
+}

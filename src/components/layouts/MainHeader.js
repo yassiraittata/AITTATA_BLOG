@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
 
 import classes from "./MainHeader.module.css";
+import MobileHeaderMenu from "./MobileHeaderMenu";
 import PageTitle from "./PageTitle";
 
 const MainHeader = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <>
+      <div className={classes.mobile_header}>
+        <Link to="/">
+          <h1 className={classes.logo}>AITTATA Blog</h1>
+        </Link>
+        <button onClick={() => setShowMobileMenu((prev) => !prev)}>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </div>
+
+      {showMobileMenu && <MobileHeaderMenu />}
+
       <div className={classes.header_container}>
         <header className={classes.header}>
           <Link to="/">

@@ -18,6 +18,18 @@ body {
 }
 
 main {
-  max-width: 1150px;
+  max-width: 1200px;
   margin: auto;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    margin-top: 15rem;
+  }
 }

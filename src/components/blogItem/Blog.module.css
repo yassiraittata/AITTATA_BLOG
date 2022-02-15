@@ -1,7 +1,12 @@
+.blog {
+  overflow: auto;
+  overflow-y: hidden;
+}
+
 .blog__image {
   /* flex-basis: 20%; */
-  max-width: 40rem;
-  max-height: 50rem;
+  max-width: 30rem;
+  max-height: 40rem;
   margin-right: 2rem;
   float: left;
 }

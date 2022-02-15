@@ -4,6 +4,12 @@
   margin-bottom: 7rem;
 }
 
+@media (max-width: 600px) {
+  .header_container {
+    display: none;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -63,4 +69,41 @@
 
 .active {
   border-bottom: 2px solid #750bb0;
+}
+
+/* --------------------- MOBILE VERSION ---------------------------  */
+.mobile_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #750bb0;
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+
+.mobile_header .logo {
+  font-size: 2rem;
+  color: #eee;
+}
+
+.mobile_header button {
+  background-color: transparent;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+}
+
+.mobile_header button ion-icon {
+  font-size: 5rem;
+}
+
+@media (min-width: 600px) {
+  .mobile_header {
+    display: none;
+  }
 }

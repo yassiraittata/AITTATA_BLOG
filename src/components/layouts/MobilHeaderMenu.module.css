@@ -1,0 +1,52 @@
+.menu_cotainer {
+  padding: 5rem;
+  background-color: #750bb0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding-top: 12rem;
+}
+
+.nav {
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.nav li {
+  margin-bottom: 1rem;
+}
+
+.nav li a {
+  font-size: 2rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.search_form {
+  width: 80%;
+  /* background-color: red; */
+}
+
+.search_form input {
+  width: 70%;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  margin-right: 2rem;
+  outline: none;
+}
+
+.search_form button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+}
+
+@media (min-width: 600px) {
+  .menu_cotainer {
+    display: none;
+  }
+}

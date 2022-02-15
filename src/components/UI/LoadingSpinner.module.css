@@ -1,0 +1,20 @@
+.spinner {
+  /* background-color: red; */
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 50%;
+  border-top: 1rem solid #750bb0;
+  border-bottom: 1rem solid #750bb0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  animation: spinner 1.2s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

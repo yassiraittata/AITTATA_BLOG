@@ -13,7 +13,6 @@
   font-weight: bold;
   color: #444;
   margin-bottom: 2.5rem;
-  /* margin: auto; */
 }
 
 .form {
@@ -60,4 +59,10 @@
 .button:hover {
   background-color: transparent;
   color: #750bb0;
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
 }
