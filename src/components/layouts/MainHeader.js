@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 
 import classes from "./MainHeader.module.css";
 import MobileHeaderMenu from "./MobileHeaderMenu";
 import PageTitle from "./PageTitle";
+import { searchContext } from "../../store/search-contet";
 
 const MainHeader = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const searchCtx = useContext(searchContext);
 
   return (
     <>
@@ -27,7 +30,11 @@ const MainHeader = () => {
             <h1 className={classes.logo}>AITTATA Blog</h1>
           </Link>
           <form className={classes.search}>
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => searchCtx.setSearchValue(e.target.value)}
+            />
           </form>
           <nav className={classes.nav}>
             <li>
@@ -50,7 +57,9 @@ const MainHeader = () => {
         </header>
 
         <Routes>
-          <Route path="/blogs" element={<PageTitle />} />
+          {!searchCtx.searchValue && (
+            <Route path="/blogs" element={<PageTitle />} />
+          )}
         </Routes>
       </div>
     </>

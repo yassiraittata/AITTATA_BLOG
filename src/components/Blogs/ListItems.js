@@ -1,18 +1,23 @@
-import React from "react";
-// import axios from axios;
+import React, { useContext } from "react";
 import { useQuery } from "react-query";
 import { collection, getDocs } from "firebase/firestore";
 
 import { db } from "../../firebase-config";
 
 import BlogItem from "./BlogItem";
+import { searchContext } from "../../store/search-contet";
 
 import classes from "./ListItems.module.css";
+import LoadingSpinner from "../UI/LoadingSpinner";
+import NoData from "../layouts/NoData";
 
 const ListItems = () => {
+  const searchCtx = useContext(searchContext);
   const blogsCollection = collection(db, "Blogs");
 
-  // console.log(blogsCollection);
+  const searchValue = searchCtx.searchValue;
+
+  console.log(searchCtx.blogsFiltered);
 
   const { isLoading, data } = useQuery("blogs", async () => {
     const blogs = await getDocs(blogsCollection);
@@ -20,7 +25,7 @@ const ListItems = () => {
     return blogs.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   });
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className={classes.list_items_container}>
@@ -57,21 +62,60 @@ const ListItems = () => {
         </li>
       </ul> */}
 
-      <div className={classes.list_items}>
-        {isLoading && <h1>Loading...</h1>}
-        {!isLoading &&
-          data &&
-          data.map((el) => (
-            <BlogItem
-              key={el.id}
-              id={el.id}
-              title={el.title}
-              date={el.date}
-              image={el.image}
-              text={el.text}
-            />
-          ))}
-      </div>
+      {isLoading && <LoadingSpinner />}
+      {/* {searchValue && searchCtx.isLoading && <LoadingSpinner />} */}
+
+      {
+        searchValue && (
+          <div className={classes.list_items}>
+            {searchCtx.isLoading && <LoadingSpinner />}
+            {!searchCtx.isLoading &&
+              searchCtx.blogsFiltered.map((el) => (
+                <BlogItem
+                  key={el.id}
+                  id={el.id}
+                  title={el.title}
+                  date={el.date}
+                  image={el.image}
+                  text={el.text}
+                />
+              ))}
+            {searchCtx.blogsFiltered.length === 0 && !searchCtx.isLoading && (
+              <NoData />
+            )}
+          </div>
+        )
+        // !searchCtx.isLoading &&
+        // searchCtx.blogsFiltered.map((el) => {
+        //   return (
+        //     <BlogItem
+        //       key={el.id}
+        //       id={el.id}
+        //       title={el.title}
+        //       date={el.date}
+        //       image={el.image}
+        //       text={el.text}
+        //     />
+        //   );
+        // })
+      }
+      {!isLoading && !searchValue && (
+        <div className={classes.list_items}>
+          {isLoading && <h1>Loading...</h1>}
+          {!isLoading &&
+            data &&
+            data.map((el) => (
+              <BlogItem
+                key={el.id}
+                id={el.id}
+                title={el.title}
+                date={el.date}
+                image={el.image}
+                text={el.text}
+              />
+            ))}
+        </div>
+      )}
     </div>
   );
 };
